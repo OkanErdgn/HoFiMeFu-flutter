@@ -30,9 +30,11 @@ class EmailInput extends FormzInput<String, EmailValidationError> {
   const EmailInput.pure() : super.pure('');
   const EmailInput.dirty([String value = '']) : super.dirty(value);
 
+  static final _emailRegex = RegExp(r'^[\w\.-]+@([\w\.]+[.]edu|[\w\.]+[.]edu[.][\w\.]+|edu[.][\w\.]+)$');
+
   @override
   EmailValidationError? validator(String value) {
-    return value.contains('@') ? null : EmailValidationError.invalid;
+    return _emailRegex.hasMatch(value) ? null : EmailValidationError.invalid;
   }
 }
 
