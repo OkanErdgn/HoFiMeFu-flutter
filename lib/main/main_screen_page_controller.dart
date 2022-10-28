@@ -2,6 +2,7 @@
 import 'package:flutter/widgets.dart';
 
 import 'main_screen_content.dart';
+import 'package:HoFiMeFu/maps/google_map.dart';
 
 class MainPageView extends StatefulWidget {
   @override
@@ -25,9 +26,10 @@ class MainPageViewState extends State<MainPageView> {
     return PageView(
       controller: _controller,
       scrollDirection: Axis.horizontal,
+      
       children: [
         MainScreenContent(), //TODO Left Screen ?
-        MainScreenContent(), //TODO Main Screen 
+        Map(), //TODO Main Screen 
         MainScreenContent(), //TODO Friends/Chat screen
       ],
     );
